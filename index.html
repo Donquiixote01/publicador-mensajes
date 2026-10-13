@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicador de mensajes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <main class="card">
+      <header class="card__header">
+        <h1>Publicador de mensajes</h1>
+        <p class="subtitle">
+          Envía una publicación a la API REST de prueba JSONPlaceholder mediante HTTP POST.
+        </p>
+      </header>
+
+      <!-- Formulario de publicación -->
+      <form id="post-form" novalidate>
+        <div class="field">
+          <label for="title">Título</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Escribe el título de la publicación"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="field">
+          <label for="body">Contenido</label>
+          <textarea
+            id="body"
+            name="body"
+            rows="5"
+            placeholder="Escribe el contenido de la publicación"
+          ></textarea>
+        </div>
+
+        <button type="submit" id="submit-button">Publicar</button>
+      </form>
+
+      <!-- Área de mensajes de validación, carga y error -->
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+
+      <!-- Área de resultados devueltos por la API -->
+      <section id="result" class="result" hidden>
+        <h2>Respuesta del servidor</h2>
+        <dl class="result__list">
+          <dt>ID asignado</dt>
+          <dd id="result-id"></dd>
+          <dt>Título</dt>
+          <dd id="result-title"></dd>
+          <dt>Contenido</dt>
+          <dd id="result-body"></dd>
+        </dl>
+        <p class="result__note">
+          JSONPlaceholder simula la creación: devuelve un ID, pero no almacena la publicación de
+          forma permanente.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
